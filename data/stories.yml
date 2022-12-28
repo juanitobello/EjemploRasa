@@ -1,0 +1,33 @@
+version: "3.1"
+
+stories:
+
+- story: saludo_inicial
+  steps:
+  - intent: greet
+  - action: utter_msj_bienvenida
+  - action: utter_msj_ejemplos
+  - action: action_buttons_sino
+
+- story: story_resp_buttons_affirmacion
+  steps:
+  - intent: affirmacion
+  - action: action_open_index
+  - action: utter_te_ayudo_algo_mas
+
+- story: story_resp_buttons_int_saltar
+  steps:
+  - intent: int_saltar
+  - action: utter_listo_veamos_el_mapa
+
+- story: story_ej_ricaurte
+  steps: 
+  - intent: int_ricaurte_construccion
+  - action: action_open_ricaurte
+  - action: utter_te_ayudo_algo_mas
+
+- story: story_ej_postes
+  steps: 
+  - intent: int_ej_postes  
+  - action: action_open_postes
+  - action: utter_te_ayudo_algo_mas

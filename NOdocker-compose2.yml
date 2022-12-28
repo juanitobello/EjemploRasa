@@ -1,0 +1,38 @@
+version: “3.0”
+services:
+rasa-flask:
+  build:
+  context: .
+  container_name: rasa-flask
+  volumes:
+  - ./:/app/
+  ports:
+  - 5000:5000
+  entrypoint: python
+  command: app.py
+  depends_on:
+  - rasa
+  - action-server1
+rasa:
+  container_name: rasa
+  image: rasa/rasa:2.8.0-full
+  ports:
+  - 5005:5005
+  volumes:
+  - ./:/app
+  command:
+  - run
+  - -m
+  - models
+  - --enable-api
+  - --cors
+  - “*”
+  depends_on:
+  - action-server1
+action-server1:
+  container_name: action-server1
+  image: rasa/rasa-sdk:2.8.0
+  volumes:
+  - ./actions:/app/actions
+  ports:
+  - 5055:5055

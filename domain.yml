@@ -1,0 +1,82 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - affirmacion
+  - int_saltar
+  - int_ricaurte_construccion
+  - int_ej_postes
+
+
+actions: 
+  - action_hello
+  - action_buttons_sino
+  - action_open_index
+  - action_open_postes
+  - action_open_ricaurte
+
+responses:
+  utter_bienvenida:
+  - text: "Hola, Soy tu asistente virtual"
+
+  utter_msj_bienvenida:
+  - text: "Bienvenido, soy tu Asistente Virtual UCuenca y te ayudare a encontrar la  geoinformación, de los planes de ordenamiento territorial existentes en del Cantón CUENCA para que los visualices en el visor de mapas."
+  
+  utter_msj_ejemplos:
+  - text: "Puedes pedir cosas como por ejemplo: 
+            \n- Muestra los limites del canton Cuenca.
+            \n- Muestra las áreas Patrimonio Cultural de la parroquia El Batán.  
+            \n- Muestra Zonas Agrícolas (Aqui se muestra en general para el Canton Cuenca)
+            \n- Búsquedas mas especificas con lenguaje tecnico. 
+          "
+
+  utter_ricarte: 
+  - text: "cuenca_ricaurte_construcciones"
+
+  utter_procesando:
+  - text: "Procesando..."
+
+  utter_escoge_item:
+  - text: "Escoge un ítem para mostrar en el mapa: "
+
+  utter_greet:
+  - text: "Hola como estas?"
+
+  utter_listo_veamos_el_mapa:
+  - text: "Listo empecemos a ver en el mapa \n¿Que información necesitas ver?"
+
+  utter_resp_ricaurte: 
+  - text: "https://infra-geo-ouverte.github.io/igo2/?context=_default&zoom=13&center=-78.99208,-2.8762&invisiblelayers=*&visiblelayers=89053566f0abfa20b936f539b27066bd,935177c0cf3af93c98ede61d8664ad47,92dbfd9238c22d3f8dcd9b288185d242,6143562e58898a852eeb658ba493e8e7,fond_osm_hot&wmsUrl=https%3A%2F%2Fgis.uazuay.edu.ec%2Fgeoserver%2Fcobertura_vegetal_5k%2Fwms%3F&wmsLayers=(ricaurte_construcciones:igoz16)"
+
+  utter_resp_postes:
+  - text: "https://infra-geo-ouverte.github.io/igo2/?context=_default&zoom=17&center=-79.00376,-2.89791&invisiblelayers=*&visiblelayers=508b5791b7ff3809f103bc57e1b50970,935177c0cf3af93c98ede61d8664ad47,92dbfd9238c22d3f8dcd9b288185d242,6143562e58898a852eeb658ba493e8e7,fond_osm_hot&arcgisUrl=https%3A%2F%2Fgeoservicios2.centrosur.gob.ec%2Fgeoservicios%2Frest%2Fservices%2FGeoportal_Publico%2FGeopPublic_RedesDist_rsgis1%2FMapServer&arcgisLayers=(2:igoz17)"
+
+  utter_te_ayudo_algo_mas:
+  - text: "Te ayudo en algo mas? \nPuedes escribir otra consulta"
+
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "Soy una IA creada por JB."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

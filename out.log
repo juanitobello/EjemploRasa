@@ -1,0 +1,915 @@
+2022-12-27 20:57:35,175 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/socket.io                                         GET                            handle_request
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/webhooks/socketio                                 GET                            socketio_webhook.health
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2022-12-27 20:57:35,178 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2022-12-27 20:57:35,179 [DEBUG]  Using the default number of Sanic workers (1).
+2022-12-27 20:57:36,683 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2022-12-27 20:57:37,870 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2022-12-27 20:57:38,117 [DEBUG]  Connected to InMemoryTrackerStore.
+2022-12-27 20:57:38,118 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2022-12-27 20:57:38,119 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2022-12-27 20:57:38,120 [INFO ]  Loading model /app/models/20221227-205244-formal-void.tar.gz...
+2022-12-27 20:57:39,162 [DEBUG]  Extracted model to '/tmp/tmpec770rq3'.
+2022-12-27 20:57:39,167 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2022-12-27 20:57:39,167 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2022-12-27 20:57:39,178 [DEBUG]  Node 'run_RegexFeaturizer1' loading 'RegexFeaturizer.load' and kwargs: '{}'.
+2022-12-27 20:57:39,179 [DEBUG]  Resource 'train_RegexFeaturizer1' was requested for reading.
+2022-12-27 20:57:39,180 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer2' loading 'LexicalSyntacticFeaturizer.load' and kwargs: '{}'.
+2022-12-27 20:57:39,180 [DEBUG]  Resource 'train_LexicalSyntacticFeaturizer2' was requested for reading.
+2022-12-27 20:57:39,183 [DEBUG]  Node 'run_CountVectorsFeaturizer3' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2022-12-27 20:57:39,183 [DEBUG]  Resource 'train_CountVectorsFeaturizer3' was requested for reading.
+2022-12-27 20:57:39,187 [DEBUG]  Node 'run_CountVectorsFeaturizer4' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2022-12-27 20:57:39,187 [DEBUG]  Resource 'train_CountVectorsFeaturizer4' was requested for reading.
+2022-12-27 20:57:39,199 [DEBUG]  Node 'run_DIETClassifier5' loading 'DIETClassifier.load' and kwargs: '{}'.
+2022-12-27 20:57:39,199 [DEBUG]  Resource 'train_DIETClassifier5' was requested for reading.
+2022-12-27 20:57:39,201 [DEBUG]  Loading the model from /tmp/tmpprp0wbrr/train_DIETClassifier5/DIETClassifier.tf_model with finetune_mode=False...
+2022-12-27 20:57:39,268 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2022-12-27 20:57:39,348 [DEBUG]  Following metrics will be logged during training: 
+2022-12-27 20:57:39,349 [DEBUG]    t_loss (total loss)
+2022-12-27 20:57:39,350 [DEBUG]    i_acc (intent acc)
+2022-12-27 20:57:39,350 [DEBUG]    i_loss (intent loss)
+2022-12-27 20:57:57,698 [DEBUG]  Finished loading the model.
+2022-12-27 20:57:57,699 [DEBUG]  Node 'run_EntitySynonymMapper6' loading 'EntitySynonymMapper.load' and kwargs: '{}'.
+2022-12-27 20:57:57,700 [DEBUG]  Resource 'train_EntitySynonymMapper6' was requested for reading.
+2022-12-27 20:57:57,700 [DEBUG]  Failed to load ABCMeta from model storage. Resource 'train_EntitySynonymMapper6' doesn't exist.
+2022-12-27 20:57:57,701 [DEBUG]  Node 'run_ResponseSelector7' loading 'ResponseSelector.load' and kwargs: '{}'.
+2022-12-27 20:57:57,701 [DEBUG]  Resource 'train_ResponseSelector7' was requested for reading.
+2022-12-27 20:57:57,702 [DEBUG]  Failed to load ABCMeta from model storage. Resource 'train_ResponseSelector7' doesn't exist.
+2022-12-27 20:57:57,703 [DEBUG]  Resource 'train_ResponseSelector7' was requested for reading.
+2022-12-27 20:57:57,703 [DEBUG]  Failed to load ResponseSelector from model storage. Resource 'train_ResponseSelector7' doesn't exist.
+2022-12-27 20:57:57,704 [DEBUG]  Node 'run_FallbackClassifier8' loading 'FallbackClassifier.load' and kwargs: '{}'.
+2022-12-27 20:57:57,704 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2022-12-27 20:57:57,705 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2022-12-27 20:57:57,706 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2022-12-27 20:57:57,791 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2022-12-27 20:57:57,792 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2022-12-27 20:57:57,793 [DEBUG]  Node 'run_RulePolicy1' loading 'RulePolicy.load' and kwargs: '{}'.
+2022-12-27 20:57:57,794 [DEBUG]  Resource 'train_RulePolicy1' was requested for reading.
+2022-12-27 20:57:57,795 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' loading 'UnexpecTEDIntentPolicy.load' and kwargs: '{}'.
+2022-12-27 20:57:57,796 [DEBUG]  Resource 'train_UnexpecTEDIntentPolicy2' was requested for reading.
+2022-12-27 20:57:57,798 [DEBUG]  Loading the model from /tmp/tmpprp0wbrr/train_UnexpecTEDIntentPolicy2/unexpected_intent_policy.tf_model with finetune_mode=False...
+2022-12-27 20:58:16,318 [DEBUG]  Finished loading the model.
+2022-12-27 20:58:16,320 [WARNI]  The UnexpecTED Intent Policy is currently experimental and might change or be removed in the future 🔬 Please share your feedback on it in the forum (https://forum.rasa.com) to help us make this feature ready for production.
+2022-12-27 20:58:16,321 [DEBUG]  Node 'run_TEDPolicy3' loading 'TEDPolicy.load' and kwargs: '{}'.
+2022-12-27 20:58:16,322 [DEBUG]  Resource 'train_TEDPolicy3' was requested for reading.
+2022-12-27 20:58:16,324 [DEBUG]  Loading the model from /tmp/tmpprp0wbrr/train_TEDPolicy3/ted_policy.tf_model with finetune_mode=False...
+2022-12-27 20:58:33,064 [DEBUG]  Finished loading the model.
+2022-12-27 20:58:33,065 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2022-12-27 20:58:33,065 [DEBUG]  Resource 'train_RulePolicy1' was requested for reading.
+2022-12-27 20:58:33,066 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2022-12-27 20:58:33,079 [INFO ]  Rasa server is up and running.
+2022-12-27 20:58:33,091 [INFO ]  Enabling coroutine debugging. Loop id 97142384.
+2022-12-27 21:00:31,477 [DEBUG]  User hOwhYIeAWEdvJLEWAAAB connected to socketIO endpoint.
+2022-12-27 21:00:31,577 [DEBUG]  User hOwhYIeAWEdvJLEWAAAB connected to socketIO endpoint.
+2022-12-27 21:00:32,231 [DEBUG]  Issuing ticket for conversation 'c273adf4ec5a4862baef6977bd267f55'.
+2022-12-27 21:00:32,232 [DEBUG]  Acquiring lock for conversation 'c273adf4ec5a4862baef6977bd267f55'.
+2022-12-27 21:00:32,232 [DEBUG]  Acquired lock for conversation 'c273adf4ec5a4862baef6977bd267f55'.
+2022-12-27 21:00:32,232 [DEBUG]  Could not find tracker for conversation ID 'c273adf4ec5a4862baef6977bd267f55'.
+2022-12-27 21:00:32,233 [DEBUG]  Starting a new session for conversation ID 'c273adf4ec5a4862baef6977bd267f55'.
+2022-12-27 21:00:32,246 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:00:32,246 [DEBUG]  Action 'action_session_start' ended with events '[<rasa.shared.core.events.SessionStarted object at 0x7f4cc721ed90>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2022-12-27 21:00:32,246 [DEBUG]  Current slot values: 
+	session_started_metadata: None
+2022-12-27 21:00:32,247 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7f4cc721e940>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:00:32,247 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2022-12-27 21:00:32,247 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2022-12-27 21:00:32,263 [DEBUG]  Node 'run_RegexFeaturizer1' running 'RegexFeaturizer.process'.
+2022-12-27 21:00:32,263 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer2' running 'LexicalSyntacticFeaturizer.process'.
+2022-12-27 21:00:32,263 [DEBUG]  Node 'run_CountVectorsFeaturizer3' running 'CountVectorsFeaturizer.process'.
+2022-12-27 21:00:32,276 [DEBUG]  Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2022-12-27 21:00:32,294 [DEBUG]  Node 'run_DIETClassifier5' running 'DIETClassifier.process'.
+2022-12-27 21:00:33,636 [DEBUG]  Node 'run_EntitySynonymMapper6' running 'EntitySynonymMapper.process'.
+2022-12-27 21:00:33,641 [DEBUG]  Node 'run_ResponseSelector7' running 'ResponseSelector.process'.
+2022-12-27 21:00:33,641 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2022-12-27 21:00:33,641 [DEBUG]  Adding following selector key to message property: default
+2022-12-27 21:00:33,641 [DEBUG]  Node 'run_FallbackClassifier8' running 'FallbackClassifier.process'.
+2022-12-27 21:00:33,641 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:00:33,642 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2022-12-27 21:00:33,642 [DEBUG]  Received user message '/greet' with intent '{'name': 'greet', 'confidence': 1.0}' and entities '[]'
+2022-12-27 21:00:33,643 [DEBUG]  Logged UserUtterance - tracker now has 4 events.
+2022-12-27 21:00:33,643 [DEBUG]  Validating extracted slots: 
+2022-12-27 21:00:33,643 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2022-12-27 21:00:33,644 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7f4cc721eb50>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:00:33,644 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:00:33,645 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:00:33,645 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:00:33,646 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2022-12-27 21:00:33,646 [DEBUG]  There is a memorised next action 'utter_msj_bienvenida'
+2022-12-27 21:00:33,647 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:00:33,647 [DEBUG]  Current tracker state:
+[state 1] user text: /greet | previous action name: action_listen
+2022-12-27 21:00:33,648 [DEBUG]  There is no applicable rule.
+2022-12-27 21:00:33,649 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2022-12-27 21:00:33,649 [DEBUG]  There is no applicable rule.
+2022-12-27 21:00:33,650 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:00:33,681 [DEBUG]  TED predicted 'utter_msj_bienvenida' based on user intent.
+2022-12-27 21:00:33,681 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,598 [DEBUG]  Querying for intent `greet`.
+2022-12-27 21:00:35,599 [DEBUG]  Score for intent `greet` is `1.8187052011489868`, while threshold is `1.818705439567566`.
+2022-12-27 21:00:35,599 [DEBUG]  Top 5 intents (in ascending order) that are likely here are: `[('int_ricaurte_construccion', 1.796364), ('int_saltar', 1.8144102), ('greet', 1.8187052), ('affirmacion', 1.9764048), ('int_ej_postes', 2.2236207)]`.
+2022-12-27 21:00:35,599 [DEBUG]  Intent `greet-6` unlikely to occur here.
+2022-12-27 21:00:35,600 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:00:35,600 [DEBUG]  Made prediction using user intent.
+2022-12-27 21:00:35,600 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2022-12-27 21:00:35,601 [DEBUG]  Predicted next action using MemoizationPolicy.
+2022-12-27 21:00:35,601 [DEBUG]  Predicted next action 'utter_msj_bienvenida' with confidence 1.00.
+2022-12-27 21:00:35,633 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7f4cc71abd00>]'.
+2022-12-27 21:00:35,633 [DEBUG]  Action 'utter_msj_bienvenida' ended with events '[BotUttered('Bienvenido, soy tu Asistente Virtual UCuenca y te ayudare a encontrar la  geoinformación, de los planes de ordenamiento territorial existentes en del Cantón CUENCA para que los visualices en el visor de mapas.', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_msj_bienvenida"}, 1672174835.6332705)]'.
+2022-12-27 21:00:35,651 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7f4cc721eb50>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:00:35,653 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:00:35,653 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:00:35,654 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,654 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+2022-12-27 21:00:35,655 [DEBUG]  There is a memorised next action 'utter_msj_ejemplos'
+2022-12-27 21:00:35,656 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,656 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+2022-12-27 21:00:35,657 [DEBUG]  There is no applicable rule.
+2022-12-27 21:00:35,657 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,679 [DEBUG]  TED predicted 'utter_msj_ejemplos' based on user intent.
+2022-12-27 21:00:35,680 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,680 [DEBUG]  Skipping predictions for UnexpecTEDIntentPolicy as either there is no event of type `UserUttered`, event's intent is new and not in domain or there is an event of type `ActionExecuted` after the last `UserUttered`.
+2022-12-27 21:00:35,681 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:00:35,681 [DEBUG]  Predicted next action using MemoizationPolicy.
+2022-12-27 21:00:35,681 [DEBUG]  Predicted next action 'utter_msj_ejemplos' with confidence 1.00.
+2022-12-27 21:00:35,682 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:00:35,683 [DEBUG]  Action 'utter_msj_ejemplos' ended with events '[BotUttered('Puedes pedir cosas como por ejemplo: 
+- Muestra los limites del canton Cuenca. 
+- Muestra las áreas Patrimonio Cultural de la parroquia El Batán. 
+- Muestra Zonas Agrícolas (Aqui se muestra en general para el Canton Cuenca) 
+- Búsquedas mas especificas con lenguaje tecnico. ', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_msj_ejemplos"}, 1672174835.6828732)]'.
+2022-12-27 21:00:35,691 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7f4cc721eb50>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:00:35,692 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:00:35,692 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:00:35,692 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,693 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+2022-12-27 21:00:35,693 [DEBUG]  There is a memorised next action 'action_buttons_sino'
+2022-12-27 21:00:35,693 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,694 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+2022-12-27 21:00:35,694 [DEBUG]  There is no applicable rule.
+2022-12-27 21:00:35,695 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,712 [DEBUG]  TED predicted 'action_buttons_sino' based on user intent.
+2022-12-27 21:00:35,713 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,713 [DEBUG]  Skipping predictions for UnexpecTEDIntentPolicy as either there is no event of type `UserUttered`, event's intent is new and not in domain or there is an event of type `ActionExecuted` after the last `UserUttered`.
+2022-12-27 21:00:35,713 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:00:35,713 [DEBUG]  Predicted next action using MemoizationPolicy.
+2022-12-27 21:00:35,714 [DEBUG]  Predicted next action 'action_buttons_sino' with confidence 1.00.
+2022-12-27 21:00:35,714 [DEBUG]  Calling action endpoint to run action 'action_buttons_sino'.
+2022-12-27 21:00:35,800 [ERROR]  Failed to run custom action 'action_buttons_sino'. Couldn't connect to the server at 'http://action_server:5055/webhook'. Is the server running? Error: Cannot connect to host action_server:5055 ssl:default [Temporary failure in name resolution]
+2022-12-27 21:00:35,801 [ERROR]  Encountered an exception while running action 'action_buttons_sino'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "uvloop/loop.pyx", line 1528, in getaddrinfo
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/actions/action.py", line 741, in run
+    response: Any = await self.action_endpoint.request(
+  File "/opt/venv/lib/python3.8/site-packages/rasa/utils/endpoints.py", line 164, in request
+    async with session.request(
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host action_server:5055 ssl:default [Temporary failure in name resolution]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/processor.py", line 874, in _run_action
+    events = await action.run(
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/actions/action.py", line 776, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_buttons_sino'. Couldn't connect to the server at 'http://action_server:5055/webhook.
+2022-12-27 21:00:35,802 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:00:35,802 [DEBUG]  Action 'action_buttons_sino' ended with events '[]'.
+2022-12-27 21:00:35,802 [DEBUG]  Current slot values: 
+	session_started_metadata: None
+2022-12-27 21:00:35,802 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7f4cc721eb50>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:00:35,803 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:00:35,804 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:00:35,804 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,805 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+[state 4] user intent: greet | previous action name: action_buttons_sino
+2022-12-27 21:00:35,806 [DEBUG]  There is a memorised next action 'action_listen'
+2022-12-27 21:00:35,806 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,807 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+[state 4] user intent: greet | previous action name: action_buttons_sino
+2022-12-27 21:00:35,808 [DEBUG]  There is no applicable rule.
+2022-12-27 21:00:35,808 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,825 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2022-12-27 21:00:35,825 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:00:35,826 [DEBUG]  Skipping predictions for UnexpecTEDIntentPolicy as either there is no event of type `UserUttered`, event's intent is new and not in domain or there is an event of type `ActionExecuted` after the last `UserUttered`.
+2022-12-27 21:00:35,826 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:00:35,827 [DEBUG]  Predicted next action using MemoizationPolicy.
+2022-12-27 21:00:35,827 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2022-12-27 21:00:35,828 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:00:35,828 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2022-12-27 21:00:35,829 [DEBUG]  Deleted lock for conversation 'c273adf4ec5a4862baef6977bd267f55'.
+2022-12-27 21:01:24,600 [DEBUG]  Issuing ticket for conversation 'c273adf4ec5a4862baef6977bd267f55'.
+2022-12-27 21:01:24,603 [DEBUG]  Acquiring lock for conversation 'c273adf4ec5a4862baef6977bd267f55'.
+2022-12-27 21:01:24,603 [DEBUG]  Acquired lock for conversation 'c273adf4ec5a4862baef6977bd267f55'.
+2022-12-27 21:01:24,604 [DEBUG]  Recreating tracker for id 'c273adf4ec5a4862baef6977bd267f55'
+2022-12-27 21:01:24,606 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7f4cc721ebb0>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:01:24,612 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2022-12-27 21:01:24,613 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2022-12-27 21:01:24,613 [DEBUG]  Node 'run_RegexFeaturizer1' running 'RegexFeaturizer.process'.
+2022-12-27 21:01:24,613 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer2' running 'LexicalSyntacticFeaturizer.process'.
+2022-12-27 21:01:24,614 [DEBUG]  Node 'run_CountVectorsFeaturizer3' running 'CountVectorsFeaturizer.process'.
+2022-12-27 21:01:24,615 [DEBUG]  Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2022-12-27 21:01:24,617 [DEBUG]  Node 'run_DIETClassifier5' running 'DIETClassifier.process'.
+2022-12-27 21:01:24,641 [DEBUG]  Node 'run_EntitySynonymMapper6' running 'EntitySynonymMapper.process'.
+2022-12-27 21:01:24,642 [DEBUG]  Node 'run_ResponseSelector7' running 'ResponseSelector.process'.
+2022-12-27 21:01:24,645 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2022-12-27 21:01:24,645 [DEBUG]  Adding following selector key to message property: default
+2022-12-27 21:01:24,645 [DEBUG]  Node 'run_FallbackClassifier8' running 'FallbackClassifier.process'.
+2022-12-27 21:01:24,646 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:01:24,646 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2022-12-27 21:01:24,646 [DEBUG]  Received user message 'construcciones en Ricaurte' with intent '{'name': 'int_ricaurte_construccion', 'confidence': 0.9983360171318054}' and entities '[]'
+2022-12-27 21:01:24,647 [DEBUG]  Logged UserUtterance - tracker now has 12 events.
+2022-12-27 21:01:24,647 [DEBUG]  Validating extracted slots: 
+2022-12-27 21:01:24,647 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2022-12-27 21:01:24,648 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7f4cc721ea90>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:01:24,648 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:01:24,648 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:01:24,649 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,649 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+[state 4] user intent: greet | previous action name: action_buttons_sino
+[state 5] user intent: int_ricaurte_construccion | previous action name: action_listen
+2022-12-27 21:01:24,650 [DEBUG]  There is no memorised next action
+2022-12-27 21:01:24,651 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,651 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+[state 4] user intent: greet | previous action name: action_buttons_sino
+[state 5] user text: construcciones en Ricaurte | previous action name: action_listen
+2022-12-27 21:01:24,652 [DEBUG]  There is no applicable rule.
+2022-12-27 21:01:24,653 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+[state 4] user intent: greet | previous action name: action_buttons_sino
+[state 5] user intent: int_ricaurte_construccion | previous action name: action_listen
+2022-12-27 21:01:24,654 [DEBUG]  There is no applicable rule.
+2022-12-27 21:01:24,654 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,674 [DEBUG]  TED predicted 'action_open_ricaurte' based on user intent.
+2022-12-27 21:01:24,674 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,688 [DEBUG]  Querying for intent `int_ricaurte_construccion`.
+2022-12-27 21:01:24,689 [DEBUG]  Score for intent `int_ricaurte_construccion` is `1.8034842014312744`, while threshold is `1.7963643074035645`.
+2022-12-27 21:01:24,689 [DEBUG]  Top 5 intents (in ascending order) that are likely here are: `[('int_ricaurte_construccion', 1.8034842), ('greet', 1.8392339), ('int_saltar', 1.8430164), ('affirmacion', 1.987558), ('int_ej_postes', 2.2552793)]`.
+2022-12-27 21:01:24,690 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:01:24,690 [DEBUG]  Made prediction using user intent.
+2022-12-27 21:01:24,690 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2022-12-27 21:01:24,691 [DEBUG]  Predicted next action using TEDPolicy.
+2022-12-27 21:01:24,691 [DEBUG]  Predicted next action 'action_open_ricaurte' with confidence 0.98.
+2022-12-27 21:01:24,692 [DEBUG]  Calling action endpoint to run action 'action_open_ricaurte'.
+2022-12-27 21:01:24,705 [ERROR]  Failed to run custom action 'action_open_ricaurte'. Couldn't connect to the server at 'http://action_server:5055/webhook'. Is the server running? Error: Cannot connect to host action_server:5055 ssl:default [Temporary failure in name resolution]
+2022-12-27 21:01:24,705 [ERROR]  Encountered an exception while running action 'action_open_ricaurte'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "uvloop/loop.pyx", line 1528, in getaddrinfo
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/actions/action.py", line 741, in run
+    response: Any = await self.action_endpoint.request(
+  File "/opt/venv/lib/python3.8/site-packages/rasa/utils/endpoints.py", line 164, in request
+    async with session.request(
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host action_server:5055 ssl:default [Temporary failure in name resolution]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/processor.py", line 874, in _run_action
+    events = await action.run(
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/actions/action.py", line 776, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_open_ricaurte'. Couldn't connect to the server at 'http://action_server:5055/webhook.
+2022-12-27 21:01:24,706 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7f4cc7142bb0>]'.
+2022-12-27 21:01:24,707 [DEBUG]  Action 'action_open_ricaurte' ended with events '[]'.
+2022-12-27 21:01:24,707 [DEBUG]  Current slot values: 
+	session_started_metadata: None
+2022-12-27 21:01:24,708 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7f4cc721ea90>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:01:24,709 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:01:24,709 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:01:24,710 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,711 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+[state 4] user intent: greet | previous action name: action_buttons_sino
+[state 5] user intent: int_ricaurte_construccion | previous action name: action_listen
+[state 6] user intent: int_ricaurte_construccion | previous action name: action_open_ricaurte
+2022-12-27 21:01:24,712 [DEBUG]  There is no memorised next action
+2022-12-27 21:01:24,712 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,713 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+[state 4] user intent: greet | previous action name: action_buttons_sino
+[state 5] user intent: int_ricaurte_construccion | previous action name: action_listen
+[state 6] user intent: int_ricaurte_construccion | previous action name: action_open_ricaurte
+2022-12-27 21:01:24,714 [DEBUG]  There is no applicable rule.
+2022-12-27 21:01:24,714 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,733 [DEBUG]  TED predicted 'utter_te_ayudo_algo_mas' based on user intent.
+2022-12-27 21:01:24,734 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,734 [DEBUG]  Skipping predictions for UnexpecTEDIntentPolicy as either there is no event of type `UserUttered`, event's intent is new and not in domain or there is an event of type `ActionExecuted` after the last `UserUttered`.
+2022-12-27 21:01:24,734 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:01:24,734 [DEBUG]  Predicted next action using TEDPolicy.
+2022-12-27 21:01:24,735 [DEBUG]  Predicted next action 'utter_te_ayudo_algo_mas' with confidence 0.99.
+2022-12-27 21:01:24,735 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:01:24,735 [DEBUG]  Action 'utter_te_ayudo_algo_mas' ended with events '[BotUttered('Te ayudo en algo mas? 
+Puedes escribir otra consulta', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_te_ayudo_algo_mas"}, 1672174884.7357578)]'.
+2022-12-27 21:01:24,738 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7f4cc721ea90>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:01:24,740 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:01:24,741 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:01:24,741 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,744 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+[state 4] user intent: greet | previous action name: action_buttons_sino
+[state 5] user intent: int_ricaurte_construccion | previous action name: action_listen
+[state 6] user intent: int_ricaurte_construccion | previous action name: action_open_ricaurte
+[state 7] user intent: int_ricaurte_construccion | previous action name: utter_te_ayudo_algo_mas
+2022-12-27 21:01:24,744 [DEBUG]  There is no memorised next action
+2022-12-27 21:01:24,745 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,745 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+[state 4] user intent: greet | previous action name: action_buttons_sino
+[state 5] user intent: int_ricaurte_construccion | previous action name: action_listen
+[state 6] user intent: int_ricaurte_construccion | previous action name: action_open_ricaurte
+[state 7] user intent: int_ricaurte_construccion | previous action name: utter_te_ayudo_algo_mas
+2022-12-27 21:01:24,745 [DEBUG]  There is no applicable rule.
+2022-12-27 21:01:24,746 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,765 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2022-12-27 21:01:24,766 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:01:24,766 [DEBUG]  Skipping predictions for UnexpecTEDIntentPolicy as either there is no event of type `UserUttered`, event's intent is new and not in domain or there is an event of type `ActionExecuted` after the last `UserUttered`.
+2022-12-27 21:01:24,766 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:01:24,767 [DEBUG]  Predicted next action using TEDPolicy.
+2022-12-27 21:01:24,767 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2022-12-27 21:01:24,767 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:01:24,768 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2022-12-27 21:01:24,768 [DEBUG]  Deleted lock for conversation 'c273adf4ec5a4862baef6977bd267f55'.
+2022-12-27 21:01:32,624 [DEBUG]  User RvdCXDFVMHrkbDUDAAAD connected to socketIO endpoint.
+2022-12-27 21:01:32,682 [DEBUG]  User RvdCXDFVMHrkbDUDAAAD connected to socketIO endpoint.
+2022-12-27 21:01:39,358 [DEBUG]  Issuing ticket for conversation '93c422c7501c47a39b0ebd87b39bf5bf'.
+2022-12-27 21:01:39,361 [DEBUG]  Acquiring lock for conversation '93c422c7501c47a39b0ebd87b39bf5bf'.
+2022-12-27 21:01:39,362 [DEBUG]  Acquired lock for conversation '93c422c7501c47a39b0ebd87b39bf5bf'.
+2022-12-27 21:01:39,362 [DEBUG]  Could not find tracker for conversation ID '93c422c7501c47a39b0ebd87b39bf5bf'.
+2022-12-27 21:01:39,362 [DEBUG]  Starting a new session for conversation ID '93c422c7501c47a39b0ebd87b39bf5bf'.
+2022-12-27 21:01:39,363 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:01:39,363 [DEBUG]  Action 'action_session_start' ended with events '[<rasa.shared.core.events.SessionStarted object at 0x7f4cc70adb80>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2022-12-27 21:01:39,363 [DEBUG]  Current slot values: 
+	session_started_metadata: None
+2022-12-27 21:01:39,363 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7f4cc70ad0d0>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:01:39,364 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2022-12-27 21:01:39,364 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2022-12-27 21:01:39,365 [DEBUG]  Node 'run_RegexFeaturizer1' running 'RegexFeaturizer.process'.
+2022-12-27 21:01:39,365 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer2' running 'LexicalSyntacticFeaturizer.process'.
+2022-12-27 21:01:39,367 [DEBUG]  Node 'run_CountVectorsFeaturizer3' running 'CountVectorsFeaturizer.process'.
+2022-12-27 21:01:39,368 [DEBUG]  Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2022-12-27 21:01:39,370 [DEBUG]  Node 'run_DIETClassifier5' running 'DIETClassifier.process'.
+2022-12-27 21:01:39,397 [DEBUG]  Node 'run_EntitySynonymMapper6' running 'EntitySynonymMapper.process'.
+2022-12-27 21:01:39,398 [DEBUG]  Node 'run_ResponseSelector7' running 'ResponseSelector.process'.
+2022-12-27 21:01:39,398 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2022-12-27 21:01:39,398 [DEBUG]  Adding following selector key to message property: default
+2022-12-27 21:01:39,398 [DEBUG]  Node 'run_FallbackClassifier8' running 'FallbackClassifier.process'.
+2022-12-27 21:01:39,399 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:01:39,399 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2022-12-27 21:01:39,399 [DEBUG]  Received user message 'construcciones en Ricaurte' with intent '{'name': 'int_ricaurte_construccion', 'confidence': 0.9983360171318054}' and entities '[]'
+2022-12-27 21:01:39,400 [DEBUG]  Logged UserUtterance - tracker now has 4 events.
+2022-12-27 21:01:39,400 [DEBUG]  Validating extracted slots: 
+2022-12-27 21:01:39,400 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2022-12-27 21:01:39,400 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7f4cc70ad400>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:01:39,401 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:01:39,401 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:01:39,401 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,402 [DEBUG]  Current tracker state:
+[state 1] user intent: int_ricaurte_construccion | previous action name: action_listen
+2022-12-27 21:01:39,402 [DEBUG]  There is a memorised next action 'action_open_ricaurte'
+2022-12-27 21:01:39,402 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,403 [DEBUG]  Current tracker state:
+[state 1] user text: construcciones en Ricaurte | previous action name: action_listen
+2022-12-27 21:01:39,403 [DEBUG]  There is no applicable rule.
+2022-12-27 21:01:39,404 [DEBUG]  Current tracker state:
+[state 1] user intent: int_ricaurte_construccion | previous action name: action_listen
+2022-12-27 21:01:39,404 [DEBUG]  There is no applicable rule.
+2022-12-27 21:01:39,405 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,419 [DEBUG]  TED predicted 'action_open_ricaurte' based on user intent.
+2022-12-27 21:01:39,420 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,431 [DEBUG]  Querying for intent `int_ricaurte_construccion`.
+2022-12-27 21:01:39,436 [DEBUG]  Score for intent `int_ricaurte_construccion` is `1.7963639497756958`, while threshold is `1.7963643074035645`.
+2022-12-27 21:01:39,437 [DEBUG]  Top 5 intents (in ascending order) that are likely here are: `[('int_ricaurte_construccion', 1.796364), ('int_saltar', 1.8144102), ('greet', 1.8187052), ('affirmacion', 1.9764048), ('int_ej_postes', 2.2236207)]`.
+2022-12-27 21:01:39,437 [DEBUG]  Intent `int_ricaurte_construccion-8` unlikely to occur here.
+2022-12-27 21:01:39,438 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:01:39,438 [DEBUG]  Made prediction using user intent.
+2022-12-27 21:01:39,438 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2022-12-27 21:01:39,438 [DEBUG]  Predicted next action using MemoizationPolicy.
+2022-12-27 21:01:39,439 [DEBUG]  Predicted next action 'action_open_ricaurte' with confidence 1.00.
+2022-12-27 21:01:39,439 [DEBUG]  Calling action endpoint to run action 'action_open_ricaurte'.
+2022-12-27 21:01:39,455 [ERROR]  Failed to run custom action 'action_open_ricaurte'. Couldn't connect to the server at 'http://action_server:5055/webhook'. Is the server running? Error: Cannot connect to host action_server:5055 ssl:default [Temporary failure in name resolution]
+2022-12-27 21:01:39,455 [ERROR]  Encountered an exception while running action 'action_open_ricaurte'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "uvloop/loop.pyx", line 1528, in getaddrinfo
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/actions/action.py", line 741, in run
+    response: Any = await self.action_endpoint.request(
+  File "/opt/venv/lib/python3.8/site-packages/rasa/utils/endpoints.py", line 164, in request
+    async with session.request(
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host action_server:5055 ssl:default [Temporary failure in name resolution]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/processor.py", line 874, in _run_action
+    events = await action.run(
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/actions/action.py", line 776, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_open_ricaurte'. Couldn't connect to the server at 'http://action_server:5055/webhook.
+2022-12-27 21:01:39,456 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7f4cc70ad8b0>]'.
+2022-12-27 21:01:39,456 [DEBUG]  Action 'action_open_ricaurte' ended with events '[]'.
+2022-12-27 21:01:39,456 [DEBUG]  Current slot values: 
+	session_started_metadata: None
+2022-12-27 21:01:39,457 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7f4cc70ad400>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:01:39,457 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:01:39,457 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:01:39,458 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,459 [DEBUG]  Current tracker state:
+[state 1] user intent: int_ricaurte_construccion | previous action name: action_listen
+[state 2] user intent: int_ricaurte_construccion | previous action name: action_open_ricaurte
+2022-12-27 21:01:39,459 [DEBUG]  There is a memorised next action 'utter_te_ayudo_algo_mas'
+2022-12-27 21:01:39,461 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,462 [DEBUG]  Current tracker state:
+[state 1] user intent: int_ricaurte_construccion | previous action name: action_listen
+[state 2] user intent: int_ricaurte_construccion | previous action name: action_open_ricaurte
+2022-12-27 21:01:39,462 [DEBUG]  There is no applicable rule.
+2022-12-27 21:01:39,462 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,476 [DEBUG]  TED predicted 'utter_te_ayudo_algo_mas' based on user intent.
+2022-12-27 21:01:39,477 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,478 [DEBUG]  Skipping predictions for UnexpecTEDIntentPolicy as either there is no event of type `UserUttered`, event's intent is new and not in domain or there is an event of type `ActionExecuted` after the last `UserUttered`.
+2022-12-27 21:01:39,478 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:01:39,479 [DEBUG]  Predicted next action using MemoizationPolicy.
+2022-12-27 21:01:39,479 [DEBUG]  Predicted next action 'utter_te_ayudo_algo_mas' with confidence 1.00.
+2022-12-27 21:01:39,480 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:01:39,481 [DEBUG]  Action 'utter_te_ayudo_algo_mas' ended with events '[BotUttered('Te ayudo en algo mas? 
+Puedes escribir otra consulta', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_te_ayudo_algo_mas"}, 1672174899.4804525)]'.
+2022-12-27 21:01:39,483 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7f4cc70ad400>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:01:39,486 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:01:39,487 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:01:39,488 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,489 [DEBUG]  Current tracker state:
+[state 1] user intent: int_ricaurte_construccion | previous action name: action_listen
+[state 2] user intent: int_ricaurte_construccion | previous action name: action_open_ricaurte
+[state 3] user intent: int_ricaurte_construccion | previous action name: utter_te_ayudo_algo_mas
+2022-12-27 21:01:39,489 [DEBUG]  There is a memorised next action 'action_listen'
+2022-12-27 21:01:39,490 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,490 [DEBUG]  Current tracker state:
+[state 1] user intent: int_ricaurte_construccion | previous action name: action_listen
+[state 2] user intent: int_ricaurte_construccion | previous action name: action_open_ricaurte
+[state 3] user intent: int_ricaurte_construccion | previous action name: utter_te_ayudo_algo_mas
+2022-12-27 21:01:39,491 [DEBUG]  There is no applicable rule.
+2022-12-27 21:01:39,491 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,505 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2022-12-27 21:01:39,508 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:01:39,508 [DEBUG]  Skipping predictions for UnexpecTEDIntentPolicy as either there is no event of type `UserUttered`, event's intent is new and not in domain or there is an event of type `ActionExecuted` after the last `UserUttered`.
+2022-12-27 21:01:39,509 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:01:39,509 [DEBUG]  Predicted next action using MemoizationPolicy.
+2022-12-27 21:01:39,509 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2022-12-27 21:01:39,509 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:01:39,510 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2022-12-27 21:01:39,510 [DEBUG]  Deleted lock for conversation '93c422c7501c47a39b0ebd87b39bf5bf'.
+2022-12-27 21:05:52,661 [DEBUG]  User RvdCXDFVMHrkbDUDAAAD disconnected from socketIO endpoint.
+2022-12-27 21:05:52,665 [ERROR]  Exception occurred while handling uri: 'ws://localhost:5005/socket.io/?EIO=4&transport=websocket&sid=jkN468-E7Hh6bEImAAAC'
+Traceback (most recent call last):
+  File "handle_request", line 124, in handle_request
+sanic.exceptions.ServerError: Invalid response type None (need HTTPResponse)
+2022-12-27 21:05:52,677 [DEBUG]  User hOwhYIeAWEdvJLEWAAAB disconnected from socketIO endpoint.
+2022-12-27 21:05:52,677 [ERROR]  Exception occurred while handling uri: 'ws://localhost:5005/socket.io/?EIO=4&transport=websocket&sid=7j5Onlcz38YU7IuyAAAA'
+Traceback (most recent call last):
+  File "handle_request", line 124, in handle_request
+sanic.exceptions.ServerError: Invalid response type None (need HTTPResponse)
+2022-12-27 21:06:28,755 [ERROR]  Task was destroyed but it is pending!
+source_traceback: Object created at (most recent call last):
+  File "/opt/venv/bin/rasa", line 8, in <module>
+    sys.exit(main())
+  File "/opt/venv/lib/python3.8/site-packages/rasa/__main__.py", line 125, in main
+    cmdline_arguments.func(cmdline_arguments)
+  File "/opt/venv/lib/python3.8/site-packages/rasa/cli/run.py", line 93, in run
+    rasa.run(**vars(args))
+  File "/opt/venv/lib/python3.8/site-packages/rasa/api.py", line 56, in run
+    rasa.core.run.serve_application(
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/run.py", line 225, in serve_application
+    app.run(
+  File "/opt/venv/lib/python3.8/site-packages/sanic/app.py", line 1204, in run
+    serve_single(server_settings)
+  File "/opt/venv/lib/python3.8/site-packages/sanic/server/runners.py", line 206, in serve_single
+    serve(**server_settings)
+  File "/opt/venv/lib/python3.8/site-packages/sanic/server/runners.py", line 155, in serve
+    loop.run_forever()
+  File "connection_task", line 15, in connection_task
+    from sanic.http import Http, Stage
+  File "/opt/venv/lib/python3.8/site-packages/sanic/http.py", line 146, in http1
+    await self.protocol.request_handler(self.request)
+  File "handle_request", line 83, in handle_request
+    )
+  File "/opt/venv/lib/python3.8/site-packages/engineio/asyncio_server.py", line 258, in handle_request
+    r = await self._handle_connect(environ, transport,
+  File "/opt/venv/lib/python3.8/site-packages/engineio/asyncio_server.py", line 396, in _handle_connect
+    self.start_background_task(self._service_task)
+  File "/opt/venv/lib/python3.8/site-packages/engineio/asyncio_server.py", line 332, in start_background_task
+    return asyncio.ensure_future(target(*args, **kwargs))
+task: <Task pending name='Task-7' coro=<AsyncServer._service_task() running at /opt/venv/lib/python3.8/site-packages/engineio/asyncio_server.py:487> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7f4ce6f1ee20>()] created at /usr/lib/python3.8/asyncio/tasks.py:654> created at /opt/venv/lib/python3.8/site-packages/engineio/asyncio_server.py:332>
+2022-12-27 21:10:06,424 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/socket.io                                         OPTIONS                        handle_request
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/webhooks/socketio                                 GET                            socketio_webhook.health
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2022-12-27 21:10:06,450 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2022-12-27 21:10:06,450 [DEBUG]  Using the default number of Sanic workers (1).
+2022-12-27 21:10:08,335 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2022-12-27 21:10:09,668 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2022-12-27 21:10:09,902 [DEBUG]  Connected to InMemoryTrackerStore.
+2022-12-27 21:10:09,903 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2022-12-27 21:10:09,903 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2022-12-27 21:10:09,904 [INFO ]  Loading model /app/models/20221227-205244-formal-void.tar.gz...
+2022-12-27 21:10:10,949 [DEBUG]  Extracted model to '/tmp/tmped2andcx'.
+2022-12-27 21:10:10,953 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2022-12-27 21:10:10,954 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2022-12-27 21:10:10,962 [DEBUG]  Node 'run_RegexFeaturizer1' loading 'RegexFeaturizer.load' and kwargs: '{}'.
+2022-12-27 21:10:10,962 [DEBUG]  Resource 'train_RegexFeaturizer1' was requested for reading.
+2022-12-27 21:10:10,962 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer2' loading 'LexicalSyntacticFeaturizer.load' and kwargs: '{}'.
+2022-12-27 21:10:10,963 [DEBUG]  Resource 'train_LexicalSyntacticFeaturizer2' was requested for reading.
+2022-12-27 21:10:10,983 [DEBUG]  Node 'run_CountVectorsFeaturizer3' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2022-12-27 21:10:10,983 [DEBUG]  Resource 'train_CountVectorsFeaturizer3' was requested for reading.
+2022-12-27 21:10:10,984 [DEBUG]  Node 'run_CountVectorsFeaturizer4' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2022-12-27 21:10:10,985 [DEBUG]  Resource 'train_CountVectorsFeaturizer4' was requested for reading.
+2022-12-27 21:10:10,988 [DEBUG]  Node 'run_DIETClassifier5' loading 'DIETClassifier.load' and kwargs: '{}'.
+2022-12-27 21:10:10,989 [DEBUG]  Resource 'train_DIETClassifier5' was requested for reading.
+2022-12-27 21:10:10,990 [DEBUG]  Loading the model from /tmp/tmph8fjf032/train_DIETClassifier5/DIETClassifier.tf_model with finetune_mode=False...
+2022-12-27 21:10:11,469 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2022-12-27 21:10:11,570 [DEBUG]  Following metrics will be logged during training: 
+2022-12-27 21:10:11,570 [DEBUG]    t_loss (total loss)
+2022-12-27 21:10:11,570 [DEBUG]    i_acc (intent acc)
+2022-12-27 21:10:11,570 [DEBUG]    i_loss (intent loss)
+2022-12-27 21:10:45,843 [DEBUG]  Finished loading the model.
+2022-12-27 21:10:45,844 [DEBUG]  Node 'run_EntitySynonymMapper6' loading 'EntitySynonymMapper.load' and kwargs: '{}'.
+2022-12-27 21:10:45,844 [DEBUG]  Resource 'train_EntitySynonymMapper6' was requested for reading.
+2022-12-27 21:10:45,844 [DEBUG]  Failed to load ABCMeta from model storage. Resource 'train_EntitySynonymMapper6' doesn't exist.
+2022-12-27 21:10:45,845 [DEBUG]  Node 'run_ResponseSelector7' loading 'ResponseSelector.load' and kwargs: '{}'.
+2022-12-27 21:10:45,845 [DEBUG]  Resource 'train_ResponseSelector7' was requested for reading.
+2022-12-27 21:10:45,845 [DEBUG]  Failed to load ABCMeta from model storage. Resource 'train_ResponseSelector7' doesn't exist.
+2022-12-27 21:10:45,846 [DEBUG]  Resource 'train_ResponseSelector7' was requested for reading.
+2022-12-27 21:10:45,846 [DEBUG]  Failed to load ResponseSelector from model storage. Resource 'train_ResponseSelector7' doesn't exist.
+2022-12-27 21:10:45,846 [DEBUG]  Node 'run_FallbackClassifier8' loading 'FallbackClassifier.load' and kwargs: '{}'.
+2022-12-27 21:10:45,846 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2022-12-27 21:10:45,846 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2022-12-27 21:10:45,847 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2022-12-27 21:10:45,970 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2022-12-27 21:10:45,971 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2022-12-27 21:10:45,972 [DEBUG]  Node 'run_RulePolicy1' loading 'RulePolicy.load' and kwargs: '{}'.
+2022-12-27 21:10:45,974 [DEBUG]  Resource 'train_RulePolicy1' was requested for reading.
+2022-12-27 21:10:45,975 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' loading 'UnexpecTEDIntentPolicy.load' and kwargs: '{}'.
+2022-12-27 21:10:45,975 [DEBUG]  Resource 'train_UnexpecTEDIntentPolicy2' was requested for reading.
+2022-12-27 21:10:45,979 [DEBUG]  Loading the model from /tmp/tmph8fjf032/train_UnexpecTEDIntentPolicy2/unexpected_intent_policy.tf_model with finetune_mode=False...
+2022-12-27 21:11:27,886 [DEBUG]  Finished loading the model.
+2022-12-27 21:11:27,890 [WARNI]  The UnexpecTED Intent Policy is currently experimental and might change or be removed in the future 🔬 Please share your feedback on it in the forum (https://forum.rasa.com) to help us make this feature ready for production.
+2022-12-27 21:11:27,891 [DEBUG]  Node 'run_TEDPolicy3' loading 'TEDPolicy.load' and kwargs: '{}'.
+2022-12-27 21:11:27,891 [DEBUG]  Resource 'train_TEDPolicy3' was requested for reading.
+2022-12-27 21:11:27,948 [DEBUG]  Loading the model from /tmp/tmph8fjf032/train_TEDPolicy3/ted_policy.tf_model with finetune_mode=False...
+2022-12-27 21:12:00,526 [DEBUG]  Finished loading the model.
+2022-12-27 21:12:00,527 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2022-12-27 21:12:00,528 [DEBUG]  Resource 'train_RulePolicy1' was requested for reading.
+2022-12-27 21:12:00,537 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2022-12-27 21:12:00,543 [INFO ]  Rasa server is up and running.
+2022-12-27 21:12:00,591 [INFO ]  Enabling coroutine debugging. Loop id 112077344.
+2022-12-27 21:12:03,727 [DEBUG]  User ce4uQ3fPpAwuVSOUAAAB connected to socketIO endpoint.
+2022-12-27 21:12:03,843 [DEBUG]  User ce4uQ3fPpAwuVSOUAAAB connected to socketIO endpoint.
+2022-12-27 21:12:04,383 [DEBUG]  Issuing ticket for conversation '155d22c643eb4385955ba4dffaa401c8'.
+2022-12-27 21:12:04,384 [DEBUG]  Acquiring lock for conversation '155d22c643eb4385955ba4dffaa401c8'.
+2022-12-27 21:12:04,384 [DEBUG]  Acquired lock for conversation '155d22c643eb4385955ba4dffaa401c8'.
+2022-12-27 21:12:04,385 [DEBUG]  Could not find tracker for conversation ID '155d22c643eb4385955ba4dffaa401c8'.
+2022-12-27 21:12:04,385 [DEBUG]  Starting a new session for conversation ID '155d22c643eb4385955ba4dffaa401c8'.
+2022-12-27 21:12:04,414 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:12:04,415 [DEBUG]  Action 'action_session_start' ended with events '[<rasa.shared.core.events.SessionStarted object at 0x7fe4a8841d30>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2022-12-27 21:12:04,415 [DEBUG]  Current slot values: 
+	session_started_metadata: None
+2022-12-27 21:12:04,415 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fe4a8841880>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:12:04,416 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2022-12-27 21:12:04,416 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2022-12-27 21:12:04,429 [DEBUG]  Node 'run_RegexFeaturizer1' running 'RegexFeaturizer.process'.
+2022-12-27 21:12:04,429 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer2' running 'LexicalSyntacticFeaturizer.process'.
+2022-12-27 21:12:04,431 [DEBUG]  Node 'run_CountVectorsFeaturizer3' running 'CountVectorsFeaturizer.process'.
+2022-12-27 21:12:04,458 [DEBUG]  Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2022-12-27 21:12:04,471 [DEBUG]  Node 'run_DIETClassifier5' running 'DIETClassifier.process'.
+2022-12-27 21:12:05,121 [DEBUG]  Node 'run_EntitySynonymMapper6' running 'EntitySynonymMapper.process'.
+2022-12-27 21:12:05,122 [DEBUG]  Node 'run_ResponseSelector7' running 'ResponseSelector.process'.
+2022-12-27 21:12:05,122 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2022-12-27 21:12:05,123 [DEBUG]  Adding following selector key to message property: default
+2022-12-27 21:12:05,123 [DEBUG]  Node 'run_FallbackClassifier8' running 'FallbackClassifier.process'.
+2022-12-27 21:12:05,124 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:12:05,124 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2022-12-27 21:12:05,125 [DEBUG]  Received user message '/greet' with intent '{'name': 'greet', 'confidence': 1.0}' and entities '[]'
+2022-12-27 21:12:05,126 [DEBUG]  Logged UserUtterance - tracker now has 4 events.
+2022-12-27 21:12:05,126 [DEBUG]  Validating extracted slots: 
+2022-12-27 21:12:05,126 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2022-12-27 21:12:05,127 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fe4a8841c40>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:12:05,128 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:12:05,128 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:12:05,128 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:12:05,129 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2022-12-27 21:12:05,141 [DEBUG]  There is a memorised next action 'utter_msj_bienvenida'
+2022-12-27 21:12:05,141 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:12:05,141 [DEBUG]  Current tracker state:
+[state 1] user text: /greet | previous action name: action_listen
+2022-12-27 21:12:05,142 [DEBUG]  There is no applicable rule.
+2022-12-27 21:12:05,143 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2022-12-27 21:12:05,143 [DEBUG]  There is no applicable rule.
+2022-12-27 21:12:05,144 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:12:05,166 [DEBUG]  TED predicted 'utter_msj_bienvenida' based on user intent.
+2022-12-27 21:12:05,167 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,113 [DEBUG]  Querying for intent `greet`.
+2022-12-27 21:12:06,115 [DEBUG]  Score for intent `greet` is `1.8187052011489868`, while threshold is `1.818705439567566`.
+2022-12-27 21:12:06,115 [DEBUG]  Top 5 intents (in ascending order) that are likely here are: `[('int_ricaurte_construccion', 1.796364), ('int_saltar', 1.8144102), ('greet', 1.8187052), ('affirmacion', 1.9764048), ('int_ej_postes', 2.2236207)]`.
+2022-12-27 21:12:06,116 [DEBUG]  Intent `greet-6` unlikely to occur here.
+2022-12-27 21:12:06,117 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:12:06,117 [DEBUG]  Made prediction using user intent.
+2022-12-27 21:12:06,117 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2022-12-27 21:12:06,118 [DEBUG]  Predicted next action using MemoizationPolicy.
+2022-12-27 21:12:06,118 [DEBUG]  Predicted next action 'utter_msj_bienvenida' with confidence 1.00.
+2022-12-27 21:12:06,135 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fe4a881bf70>]'.
+2022-12-27 21:12:06,135 [DEBUG]  Action 'utter_msj_bienvenida' ended with events '[BotUttered('Bienvenido, soy tu Asistente Virtual UCuenca y te ayudare a encontrar la  geoinformación, de los planes de ordenamiento territorial existentes en del Cantón CUENCA para que los visualices en el visor de mapas.', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_msj_bienvenida"}, 1672175526.1354327)]'.
+2022-12-27 21:12:06,147 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fe4a8841c40>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:12:06,147 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:12:06,148 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:12:06,148 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,149 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+2022-12-27 21:12:06,149 [DEBUG]  There is a memorised next action 'utter_msj_ejemplos'
+2022-12-27 21:12:06,149 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,150 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+2022-12-27 21:12:06,150 [DEBUG]  There is no applicable rule.
+2022-12-27 21:12:06,151 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,171 [DEBUG]  TED predicted 'utter_msj_ejemplos' based on user intent.
+2022-12-27 21:12:06,172 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,172 [DEBUG]  Skipping predictions for UnexpecTEDIntentPolicy as either there is no event of type `UserUttered`, event's intent is new and not in domain or there is an event of type `ActionExecuted` after the last `UserUttered`.
+2022-12-27 21:12:06,172 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:12:06,173 [DEBUG]  Predicted next action using MemoizationPolicy.
+2022-12-27 21:12:06,173 [DEBUG]  Predicted next action 'utter_msj_ejemplos' with confidence 1.00.
+2022-12-27 21:12:06,174 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:12:06,174 [DEBUG]  Action 'utter_msj_ejemplos' ended with events '[BotUttered('Puedes pedir cosas como por ejemplo: 
+- Muestra los limites del canton Cuenca. 
+- Muestra las áreas Patrimonio Cultural de la parroquia El Batán. 
+- Muestra Zonas Agrícolas (Aqui se muestra en general para el Canton Cuenca) 
+- Búsquedas mas especificas con lenguaje tecnico. ', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_msj_ejemplos"}, 1672175526.174494)]'.
+2022-12-27 21:12:06,182 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fe4a8841c40>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:12:06,184 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:12:06,185 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:12:06,185 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,185 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+2022-12-27 21:12:06,186 [DEBUG]  There is a memorised next action 'action_buttons_sino'
+2022-12-27 21:12:06,186 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,187 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+2022-12-27 21:12:06,187 [DEBUG]  There is no applicable rule.
+2022-12-27 21:12:06,188 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,203 [DEBUG]  TED predicted 'action_buttons_sino' based on user intent.
+2022-12-27 21:12:06,203 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,204 [DEBUG]  Skipping predictions for UnexpecTEDIntentPolicy as either there is no event of type `UserUttered`, event's intent is new and not in domain or there is an event of type `ActionExecuted` after the last `UserUttered`.
+2022-12-27 21:12:06,205 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:12:06,205 [DEBUG]  Predicted next action using MemoizationPolicy.
+2022-12-27 21:12:06,205 [DEBUG]  Predicted next action 'action_buttons_sino' with confidence 1.00.
+2022-12-27 21:12:06,208 [DEBUG]  Calling action endpoint to run action 'action_buttons_sino'.
+2022-12-27 21:12:06,452 [ERROR]  Failed to run custom action 'action_buttons_sino'. Couldn't connect to the server at 'http://action_server:5055/webhook'. Is the server running? Error: Cannot connect to host action_server:5055 ssl:default [Temporary failure in name resolution]
+2022-12-27 21:12:06,452 [ERROR]  Encountered an exception while running action 'action_buttons_sino'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "uvloop/loop.pyx", line 1528, in getaddrinfo
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/actions/action.py", line 741, in run
+    response: Any = await self.action_endpoint.request(
+  File "/opt/venv/lib/python3.8/site-packages/rasa/utils/endpoints.py", line 164, in request
+    async with session.request(
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/opt/venv/lib/python3.8/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host action_server:5055 ssl:default [Temporary failure in name resolution]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/processor.py", line 874, in _run_action
+    events = await action.run(
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/actions/action.py", line 776, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_buttons_sino'. Couldn't connect to the server at 'http://action_server:5055/webhook.
+2022-12-27 21:12:06,452 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:12:06,453 [DEBUG]  Action 'action_buttons_sino' ended with events '[]'.
+2022-12-27 21:12:06,453 [DEBUG]  Current slot values: 
+	session_started_metadata: None
+2022-12-27 21:12:06,453 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fe4a8841c40>}, targets: ['select_prediction'] and ExecutionContext(model_id='fa3ab60032874effb926d75b98d009c9', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-12-27 21:12:06,453 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-12-27 21:12:06,454 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-12-27 21:12:06,454 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,455 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+[state 4] user intent: greet | previous action name: action_buttons_sino
+2022-12-27 21:12:06,455 [DEBUG]  There is a memorised next action 'action_listen'
+2022-12-27 21:12:06,455 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,455 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_msj_bienvenida
+[state 3] user intent: greet | previous action name: utter_msj_ejemplos
+[state 4] user intent: greet | previous action name: action_buttons_sino
+2022-12-27 21:12:06,455 [DEBUG]  There is no applicable rule.
+2022-12-27 21:12:06,456 [DEBUG]  Node 'run_TEDPolicy3' running 'TEDPolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,473 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2022-12-27 21:12:06,474 [DEBUG]  Node 'run_UnexpecTEDIntentPolicy2' running 'UnexpecTEDIntentPolicy.predict_action_probabilities'.
+2022-12-27 21:12:06,474 [DEBUG]  Skipping predictions for UnexpecTEDIntentPolicy as either there is no event of type `UserUttered`, event's intent is new and not in domain or there is an event of type `ActionExecuted` after the last `UserUttered`.
+2022-12-27 21:12:06,474 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-12-27 21:12:06,474 [DEBUG]  Predicted next action using MemoizationPolicy.
+2022-12-27 21:12:06,475 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2022-12-27 21:12:06,475 [DEBUG]  Policy prediction ended with events '[]'.
+2022-12-27 21:12:06,475 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2022-12-27 21:12:06,475 [DEBUG]  Deleted lock for conversation '155d22c643eb4385955ba4dffaa401c8'.
+2022-12-28 21:19:12,941 [DEBUG]  User ce4uQ3fPpAwuVSOUAAAB disconnected from socketIO endpoint.
+2022-12-28 21:19:12,962 [ERROR]  Exception occurred while handling uri: 'ws://localhost:5005/socket.io/?EIO=4&transport=websocket&sid=PNgZzRnaQ23S-FtDAAAA'
+Traceback (most recent call last):
+  File "handle_request", line 124, in handle_request
+sanic.exceptions.ServerError: Invalid response type None (need HTTPResponse)
+2022-12-28 21:31:00,668 [ERROR]  Task was destroyed but it is pending!
+source_traceback: Object created at (most recent call last):
+  File "/opt/venv/bin/rasa", line 8, in <module>
+    sys.exit(main())
+  File "/opt/venv/lib/python3.8/site-packages/rasa/__main__.py", line 125, in main
+    cmdline_arguments.func(cmdline_arguments)
+  File "/opt/venv/lib/python3.8/site-packages/rasa/cli/run.py", line 93, in run
+    rasa.run(**vars(args))
+  File "/opt/venv/lib/python3.8/site-packages/rasa/api.py", line 56, in run
+    rasa.core.run.serve_application(
+  File "/opt/venv/lib/python3.8/site-packages/rasa/core/run.py", line 225, in serve_application
+    app.run(
+  File "/opt/venv/lib/python3.8/site-packages/sanic/app.py", line 1204, in run
+    serve_single(server_settings)
+  File "/opt/venv/lib/python3.8/site-packages/sanic/server/runners.py", line 206, in serve_single
+    serve(**server_settings)
+  File "/opt/venv/lib/python3.8/site-packages/sanic/server/runners.py", line 155, in serve
+    loop.run_forever()
+  File "connection_task", line 15, in connection_task
+    from sanic.http import Http, Stage
+  File "/opt/venv/lib/python3.8/site-packages/sanic/http.py", line 146, in http1
+    await self.protocol.request_handler(self.request)
+  File "handle_request", line 83, in handle_request
+    )
+  File "/opt/venv/lib/python3.8/site-packages/engineio/asyncio_server.py", line 258, in handle_request
+    r = await self._handle_connect(environ, transport,
+  File "/opt/venv/lib/python3.8/site-packages/engineio/asyncio_server.py", line 396, in _handle_connect
+    self.start_background_task(self._service_task)
+  File "/opt/venv/lib/python3.8/site-packages/engineio/asyncio_server.py", line 332, in start_background_task
+    return asyncio.ensure_future(target(*args, **kwargs))
+task: <Task pending name='Task-7' coro=<AsyncServer._service_task() running at /opt/venv/lib/python3.8/site-packages/engineio/asyncio_server.py:487> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7fe4a9244700>()] created at /usr/lib/python3.8/asyncio/tasks.py:654> created at /opt/venv/lib/python3.8/site-packages/engineio/asyncio_server.py:332>
